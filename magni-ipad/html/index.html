@@ -1,0 +1,768 @@
+<html>
+	<head>
+		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+		<script src="./js/script.js" type="text/javascript"></script>
+		<script src="./js/calculator.js"></script>
+        <script src="./js/clock.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+		<link rel="stylesheet" href="./css/style.css" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800,900" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js" type="text/javascript"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-thumbs.js" type="text/javascript"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-media.js" type="text/javascript"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-buttons.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="nui/fancy-crap.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-buttons.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-thumbs.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.css">
+	</head>
+    <body>
+        <div class="container">
+			<div class="ipad-frame"></div>
+			<div class="homebutton"></div>
+			<div class="ipad-background"></div>
+			<div id="phone-time">00:00</div>
+			<p class="wifi"><i class="fas fa-wifi"></i></p>
+			<p class="battery-text">100%</p>
+			<p class="battery"><i class="fas fa-battery-full"></i></p>
+			<div class="settings"></div>
+			<div class="settings-text">Settings</div>
+			<div class="settings-app">
+				<p id="setting-text">Settings</p>
+				<div class="settings-app-tab">
+					<div class="settings-app-tab secondTab" data-settingstab="darkmod">
+						<label class="switch" >
+							<input class="darkmod-box" type="checkbox" id="darkmode-box" onclick="sea()" checked>
+							<span class="slider round"></span>
+						</label>
+						<div class="settings-tab-icon"><i class="fas fa-moon" style="color: var(--primary-optionicon-color);;"></i></div>
+						<div class="settings-tab-title"><p>Dark Mode</p></div>
+						<div class="settings-tab-description" id="darkmod"><p>On</p></div>
+
+					</div>
+					<hr id="hrs">
+		     	</div>
+			</div>
+
+			<div class="chronometer"></div>
+			<div class="chronometer-text">Chronometer</div>
+			<div class="chronometer-app">
+                <div class="clock-app">
+                    <div class="clock-app-loaded">
+                        <div class="clock-app-invoices">
+                            <p id="cronometer">00:00,00</p>
+                            <div class="cronometer-buttons reset-tur">TOUR</div>
+                            <div class="cronometer-buttons start-stop">START</div>
+                            <div class="clock-app-invoices-list">
+                            </div>
+                        </div>
+                  
+                    </div>
+                </div>
+			</div>
+
+			<div class="rules"></div>
+			<div class="rules-text">FAQ</div>
+			<div class="rules-app">
+                <div class='progress'>
+                    <div class='progress_inner'>
+                      <div class='progress_inner__step'>
+                        <label for='step-1'>Server About</label>
+                      </div>
+                      <div class='progress_inner__step'>
+                        <label for='step-2'>Server Rules</label>
+                      </div>
+                      <div class='progress_inner__step'>
+                        <label for='step-3'>Server Key Assignments</label>
+                      </div>
+                      <div class='progress_inner__step'>
+                        <label for='step-4'>Jobs on the server</label>
+                      </div>
+                      <div class='progress_inner__step'>
+                        <label for='step-5'>Server Features</label>
+                      </div>
+                      <input checked='checked' id='step-1' name='step' type='radio'>
+                      <input id='step-2' name='step' type='radio'>
+                      <input id='step-3' name='step' type='radio'>
+                      <input id='step-4' name='step' type='radio'>
+                      <input id='step-5' name='step' type='radio'>
+                      <div class='progress_inner__bar'></div>
+                      <div class='progress_inner__bar--set'></div>
+                      <div class='progress_inner__tabs'>
+                        <div class='tab tab-0'>
+                          <h1>Server About</h1>
+                          <p id="serverabout"></p>
+                        </div>
+                        <div class='tab tab-1'>
+                          <h1>Server Rules</h1>
+                          <p id="serverrules"></p>
+                        </div>
+                        <div class='tab tab-2'>
+                          <h1>Server Key Assignments</h1>
+                          <p id="key"></p>
+                        </div>
+                        <div class='tab tab-3'>
+                          <h1>Jobs on the server</h1>
+                          <p id="jobs"></p>
+                        </div>
+                        <div class='tab tab-4'>
+                          <h1>Server Features</h1>
+                          <p id="serverfeatures"></p>
+                        </div>
+                      </div>
+                    
+                    </div>
+                </div>
+            </div>
+
+			<div class="snake"></div>
+			<div class="snake-text">Snake</div>
+			<div class="snake-app" showScreen(1)>
+			    <p class="back"><i class="fas fa-long-arrow-alt-left"></i></p>
+                <p class="score-snake">Score: <span id="score_value">0</span></p>
+				<canvas class="wrap" id="snake" width="900" height="450" tabindex="1"></canvas>
+                <div id="gameover">
+					<h2>Game Over</h2>
+					<p>press <span style="background-color: #FFFFFF; color: rgb(0, 255, 145)">space</span> to begin a</p>
+					<a id="newgame_gameover">new game</a>
+					<a id="setting_gameover">settings</a>
+                </div>
+                <div id="setting">
+					<h2>Settings</h2>
+					<a id="newgame_setting">new game</a>
+					<p>Speed:
+						<input id="speed1" type="radio" name="speed" value="120" checked/>
+						<label for="speed1">Slow</label>
+						<input id="speed2" type="radio" name="speed" value="75"/>
+						<label for="speed2">Normal</label>
+						<input id="speed3" type="radio" name="speed" value="35"/>
+						<label for="speed3">Fast</label>
+					</p>
+					<p>Wall:
+						<input id="wallon" type="radio" name="wall" value="1" checked/>
+						<label for="wallon">On</label>
+						<input id="walloff" type="radio" name="wall" value="0"/>
+						<label for="walloff">Off</label>
+					</p>	
+                </div>
+                <div id="menu">
+                    <h2>Snake</h2>
+                    <a id="newgame_menu">new game</a>
+                    <a id="setting_menu">settings</a>
+                </div>
+			</div>
+
+			<div class="piano"></div>
+			<div class="piano-text">Piano</div>
+			<div class="piano-app">
+				<kbd data-key=a-s-2 data-freq=116.54></kbd>
+				<kbd data-key=b-2 data-freq=123.47></kbd>
+				<kbd data-key=c-3 data-freq=130.81></kbd>
+				<kbd data-key=c-s-3 data-freq=138.59></kbd>
+				<kbd data-key=d-3 data-freq=146.83></kbd>
+				<kbd data-key=d-s-3 data-freq=155.56></kbd>
+				<kbd data-key=e-3 data-freq=164.81></kbd>
+				<kbd data-key=f-3 data-freq=174.61></kbd>
+				<kbd data-key=f-s-3 data-freq=185.00></kbd>
+				<kbd data-key=g-3 data-freq=196.00></kbd>
+				<kbd data-key=g-s-3 data-freq=207.65></kbd>
+				<kbd data-key=a-3 data-freq=220.00></kbd>
+				<kbd data-key=a-s-3 data-freq=233.08></kbd>
+				<kbd data-key=b-3 data-freq=246.94></kbd>
+				<kbd data-key=c-4 data-freq=261.63></kbd>
+				<kbd data-key=c-s-4 data-freq=277.18></kbd>
+				<kbd data-key=d-4 data-freq=293.66></kbd>
+				<kbd data-key=d-s-4 data-freq=311.13></kbd>
+				<kbd data-key=e-4 data-freq=329.63></kbd>
+				<kbd data-key=f-4 data-freq=349.23></kbd>
+				<kbd data-key=f-s-4 data-freq=369.99></kbd>
+				<kbd data-key=g-4 data-freq=392.00></kbd>
+				<kbd data-key=g-s-4 data-freq=415.30></kbd>
+				<kbd data-key=a-4 data-freq=440.00></kbd>
+				<kbd data-key=a-s-4 data-freq=466.16></kbd>
+				<kbd data-key=b-4 data-freq=493.88></kbd>
+				<kbd data-key=c-5 data-freq=523.25></kbd>
+				<kbd data-key=c-s-5 data-freq=554.37></kbd>
+				<kbd data-key=d-5 data-freq=587.33></kbd>
+				<kbd data-key=d-s-5 data-freq=622.25></kbd>
+				<kbd data-key=e-5 data-freq=659.25></kbd>
+				<kbd data-key=f-5 data-freq=698.46></kbd>
+				<kbd data-key=f-s-5 data-freq=739.99></kbd>
+				<kbd data-key=g-5 data-freq=783.99></kbd>
+				<kbd data-key=g-s-5 data-freq=830.61></kbd>
+				<kbd data-key=a-5 data-freq=880.00></kbd>
+				<kbd data-key=a-s-5 data-freq=932.33></kbd>
+				<kbd data-key=b-5 data-freq=987.77></kbd>
+				<kbd data-key=c-6 data-freq=1046.50></kbd>
+				<kbd data-key=c-s-6 data-freq=1108.73></kbd>
+				<kbd data-key=d-6 data-freq=1174.66></kbd>
+			</div>
+
+			<div class="app-2048"></div>
+			<div class="app-2048-text">2048</div>
+			<div class="app-2048-app">
+				<div class="info">
+					<div style="display:flex;flex-direction: row;width:100%;align-items: center;">
+						<span class="title"></span>
+						<div style='flex:auto'></div>
+						<div style='display:flex;flex-direction: row;height:100%;align-items: center;'>
+							<div class="score-container">
+								<div class="score">0</div>
+								<div class="addition"></div>
+							</div>
+						</div>
+					</div>
+					<div style="display:flex;flex-direction: row;width:100%;align-items: center;">
+						<div class="game-intro"><strong></strong><br><a href="javascript:void(0)"class="how-to-play-link"></a></div>
+						<div style='flex:auto'></div>
+						<div class="restart-button">New game</div>
+					</div>
+				</div>
+				<div class='board'>
+					<div class='backs'></div>
+					<div class='grids'></div>
+				</div>
+			</div>
+
+			<div class="fast"></div>
+
+			<div class="report"></div>
+			<div class="report-app">
+				<p id="textreport">REPORT</p>
+				<p id="typetext">TYPE</p>
+				<select name="report" id="report-select">
+					<option value="Bug">Bug</option>
+					<option value="Suggestion">Suggestion</option>
+					<option value="Compliment">Compliment</option>
+				</select>
+				<p id="titletext">TITLE</p>
+				<p id="desctext">DESCRIPTION</p>
+				<input type="text" cols="80" rows="10" name="report-name" id="report-name"">
+				<textarea id="report-data" name="report-data"></textarea>
+				<button type="submit" id="report-submit"><i class="fas fa-envelope"></i> SUBMIT</button>
+			</div>
+
+			<div class="translate"></div>
+			<div class="translate-app">
+				<select name="language" id="cLanguage" onchange="convert()">
+					<option value="en">English</option>
+					<option value="hi">Hindi</option>
+					<option value="ar">Arabic</option>
+					<option value="zh">Chinese</option>
+					<option value="fr">French</option>
+					<option value="de">German</option>
+					<option value="id">Indonesian</option>
+					<option value="ga">Irish</option>
+					<option value="it">Italian</option>
+					<option value="ja">Japanese</option>
+					<option value="ko">Korean</option>
+					<option value="pl">Polish</option>
+					<option value="pt">Portugese</option>
+					<option value="ru">Russian</option>
+					<option value="es">Spanish</option>
+					<option value="tr">Turkish</option>
+					<option value="vi">Vietnamese</option>
+				</select>
+				<textarea id="iLanguage" cols="69" rows="10" oninput="debounce(convert,1000)" placeholder="Enter text"></textarea>
+				<select name="language" id="oLanguage" onchange="convert()">
+					<option value="en">English</option>
+					<option value="hi">Hindi</option>
+					<option value="ar">Arabic</option>
+					<option value="zh">Chinese</option>
+					<option value="fr">French</option>
+					<option value="de">German</option>
+					<option value="id">Indonesian</option>
+					<option value="ga">Irish</option>
+					<option value="it">Italian</option>
+					<option value="ja">Japanese</option>
+					<option value="ko">Korean</option>
+					<option value="pl">Polish</option>
+					<option value="pt">Portugese</option>
+					<option value="ru">Russian</option>
+					<option value="es">Spanish</option>
+					<option value="tr">Turkish</option>
+					<option value="vi">Vietnamese</option>
+				</select>
+				<textarea id="conLanguage" cols="69" rows="10" placeholder="Converted Text" disabled></textarea>
+			</div>
+
+			<div class="draw"></div>
+			<div class="draw-app">
+				<a id="new" class="navbtn">New</a>
+				<div id="content"></div>
+				<div class="palette-case">
+					<div class="palette-box">
+						<div class="palette white"></div>
+					</div>	
+					<div class="palette-box">
+						<div class="palette red"></div>
+					</div>
+					<div class="palette-box">
+						<div class="palette blue"></div>
+					</div>
+					<div class="palette-box">
+						<div class="palette green"></div>
+					</div>
+					<div class="palette-box">
+						<div class="palette black"></div>
+					</div>		
+					<div style="clear:both"></div>
+				</div>
+	    	</div>
+		
+			<div class="calcuator"></div>
+			<div class="calculator-app">
+				<div class="main">
+					<form name="form" action="">
+						<input class="text" name="text" type="text" onkeypress="formEngelle(event)"  >
+					</form>
+			
+					<table>
+						<tr>
+							<td><input class="button" type="button" value="C" onclick="hepsiniSil()"></td>
+							<td><input class="button" type="button" value="*" onclick="sayiekle('*')"></td>
+							<td><input class="button" type="button" value="/" onclick="sayiekle('/')"></td>
+							<td><input class="button" type="button" value="<" onclick="sil()"></td>
+						</tr>
+						<tr>
+							<td><input class="button" type="button" value="7" onclick="sayiekle(7)"></td>
+							<td><input class="button" type="button" value="8" onclick="sayiekle(8)"></td>
+							<td><input class="button" type="button" value="9" onclick="sayiekle(9)"></td>
+							<td><input class="button" type="button" value="-" onclick="sayiekle('-')"></td>
+						</tr>
+						<tr>
+							<td><input class="button" type="button" value="4" onclick="sayiekle(4)"></td>
+							<td><input class="button" type="button" value="5" onclick="sayiekle(5)"></td>
+							<td><input class="button" type="button" value="6" onclick="sayiekle(6)"></td>
+							<td><input class="button" type="button" value="+" onclick="sayiekle('+')"></td>
+						</tr>
+						<tr>
+							<td> <input class="button" type="button" value="1" onclick="sayiekle(1)"> </td>
+							<td> <input class="button" type="button" value="2" onclick="sayiekle(2)"> </td>
+							<td> <input class="button" type="button" value="3" onclick="sayiekle(3)"></td>
+							<td rowspan="2"> <input class="button" style="height: 148px" type="button" value="=" onclick="sonuc('=')"></td>
+						</tr>
+						<tr>
+							<td colspan="2"> <input class="button" style="width: 170px" type="button" value="0" onclick="sayiekle(0)"> </td>
+							<td> <input class="button" type="button" value="." onclick="sayiekle('.')"> </td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<div class="youtube"></div>
+			<div class="youtube-app">
+				<section>
+					<div class="youtube-logo"></div>
+					<div class="youtube-text2">YouTube</div>
+					<form id="search-form" name="search-form" onsubmit="return search()">
+						<div class="fieldcontainer">
+							<input type="searchs" id="query" class="search-field" placeholder="Search">
+							<input type="submit" name="search-btn" id="search-btn" value="">
+						</div>
+					</form>
+					<ul id="results"></ul>
+					<div id="buttons"></div>
+				</section>
+			</div>
+			
+		</div>
+		<script type="text/javascript">
+    function sea() {
+        var checkBox = document.getElementById("darkmode-box");
+        if (checkBox.checked == true){
+          $("#darkmod > p").html('On');
+		  document.documentElement.style.setProperty('--primary-phonebuttonhovers-color', '#181818');
+		  document.documentElement.style.setProperty('--primary-wp4-color', '#5c5c5c');
+		  document.documentElement.style.setProperty('--primary-settingsbg-color', '#ffffff');
+		  document.documentElement.style.setProperty('--primary-settingoptiontext-color', '#4a4a4a');
+		  document.documentElement.style.setProperty('--primary-phonerecentcall-color', '#181818');
+        } else {
+        $("#darkmod > p").html('Off');
+		document.documentElement.style.setProperty('--primary-phonebuttonhovers-color', '#ffffff');
+		document.documentElement.style.setProperty('--primary-wp4-color', '#feae00');
+		document.documentElement.style.setProperty('--primary-settingsbg-color', '#000000');
+		document.documentElement.style.setProperty('--primary-settingoptiontext-color', '#ffffff');
+		document.documentElement.style.setProperty('--primary-phonerecentcall-color', '#f2f0f6');
+        }
+    }	
+var ctx, color = "#000";	
+$(document).ready(function () {
+				// setup a new canvas for drawing wait for device init
+				setTimeout(function(){
+				   newCanvas();
+				}, 1000);
+					
+				// reset palette selection (css) and select the clicked color for canvas strokeStyle
+				$(".palette").click(function(){
+					$(".palette").css("border-color", "#777");
+					$(".palette").css("border-style", "solid");
+					$(this).css("border-color", "#fff");
+					$(this).css("border-style", "dashed");
+					color = $(this).css("background-color");
+					ctx.beginPath();
+					ctx.strokeStyle = color;
+				});
+				
+				// link the new button with newCanvas() function
+				$("#new").click(function() {
+					newCanvas();
+				});
+			});
+			
+			// function to setup a new canvas for drawing
+			function newCanvas(){
+				//define and resize canvas
+				$("#content").height($(window).height()-90);
+				var canvas = '<canvas id="canvas" width="'+$(window).width()+'" height="'+($(window).height()-90)+'"></canvas>';
+				$("#content").html(canvas);
+				
+				// setup canvas
+				ctx=document.getElementById("canvas").getContext("2d");
+				ctx.strokeStyle = color;
+				ctx.lineWidth = 5;	
+				
+				// setup to trigger drawing on mouse or touch
+				$("#canvas").drawTouch();
+				$("#canvas").drawPointer();
+				$("#canvas").drawMouse();
+			}
+			
+			// prototype to	start drawing on touch using canvas moveTo and lineTo
+			$.fn.drawTouch = function() {
+				var start = function(e) {
+					e = e.originalEvent;
+					ctx.beginPath();
+					x = e.changedTouches[0].pageX-210;
+					y = e.changedTouches[0].pageY-140;
+					ctx.moveTo(x,y);
+				};
+				var move = function(e) {
+					e.preventDefault();
+					e = e.originalEvent;
+					x = e.changedTouches[0].pageX-210;
+					y = e.changedTouches[0].pageY-140;
+					ctx.lineTo(x,y);
+					ctx.stroke();
+				};
+				$(this).on("touchstart", start);
+				$(this).on("touchmove", move);	
+			}; 
+				
+			// prototype to	start drawing on pointer(microsoft ie) using canvas moveTo and lineTo
+			$.fn.drawPointer = function() {
+				var start = function(e) {
+					e = e.originalEvent;
+					ctx.beginPath();
+					x = e.pageX-210;
+					y = e.pageY-140;
+					ctx.moveTo(x,y);
+				};
+				var move = function(e) {
+					e.preventDefault();
+					e = e.originalEvent;
+					x = e.pageX-210;
+					y = e.pageY-140;
+					ctx.lineTo(x,y);
+					ctx.stroke();
+				};
+				$(this).on("MSPointerDown", start);
+				$(this).on("MSPointerMove", move);
+			};        
+			
+			// prototype to	start drawing on mouse using canvas moveTo and lineTo
+			$.fn.drawMouse = function() {
+				var clicked = 0;
+				var start = function(e) {
+					clicked = 1;
+					ctx.beginPath();
+					x = e.pageX-210;
+					y = e.pageY-140;
+					ctx.moveTo(x,y);
+				};
+				var move = function(e) {
+					if(clicked){
+						x = e.pageX-210;
+						y = e.pageY-140;
+						ctx.lineTo(x,y);
+						ctx.stroke();
+					}
+				};
+				var stop = function(e) {
+					clicked = 0;
+				};
+				$(this).on("mousedown", start);
+				$(this).on("mousemove", move);
+				$(window).on("mouseup", stop);
+			};
+
+            // new speech recognition object
+            var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+            var recognition = new SpeechRecognition();
+            // This runs when the speech recognition service starts
+            recognition.onstart = function() {};
+
+			recognition.onspeechend = function() {
+            // when user is done speaking
+            recognition.stop();
+            }          
+              
+            // This runs when the speech recognition service returns result
+            recognition.onresult = function(event) {
+            var iLanguage = document.getElementById("iLanguage")
+            var transcript = event.results[0][0].transcript;
+
+            document.getElementById("cLanguage").value = "en"
+            iLanguage.value = transcript;
+            convert();
+            };
+			
+            function speak() {  
+            let target = document.getElementById("oLanguage").value;  
+            var conLanguage = document.getElementById("conLanguage").value;
+            var msg = new SpeechSynthesisUtterance();
+            msg.lang = target;
+            msg.text = conLanguage;
+            window.speechSynthesis.speak(msg);}
+
+			async function convert(){
+            var conLanguage = document.getElementById("conLanguage")
+            let q = document.getElementById("iLanguage").value
+            if(q.length == 0){
+            return;
+            }
+
+        let source  = document.getElementById("cLanguage").value
+        let target = document.getElementById("oLanguage").value;
+    
+        data ={
+        q,
+        source,
+        target
+        }
+        data = JSON.stringify(data);
+    
+        let res = await fetch("https://libretranslate.de/translate", {
+	    method: "POST",
+	    body: data,
+	    headers: { "Content-Type": "application/json" }
+        });
+
+        let targetLanguage =  await res.json()
+
+        conLanguage.value = targetLanguage.translatedText;}
+        var timerId;
+            function debounce(func,delay){
+            if(timerId){
+            clearTimeout(timerId)
+            }
+            timerId = setTimeout(() => {
+            func()
+            }, delay);
+        }                        
+
+		$(document).ready(function () {
+            $(".fancybox").fancybox();
+        });
+
+        // Searchbar Handler
+        $(function () {
+            var searchField = $('#query');
+            var icon = $('#search-btn');
+
+
+            $('#search-form').submit(function (e) {
+                e.preventDefault();
+            });
+        })
+
+		$(document).on("click", ".youtube-text2", function () {
+			$('#results').html('');
+            $('#buttons').html('');
+        });
+        function search() {
+            // Clear Results
+            $('#results').html('');
+            $('#buttons').html('');
+
+            // Get Form Input
+            q = $('#query').val();
+
+            // Run GET Request on API********************************
+            $.get(
+                "https://www.googleapis.com/youtube/v3/search", {
+                    part: 'snippet, id',
+                    q: q,
+                    type: 'video',
+                    key: 'AIzaSyBSYQygRrJHge7Kg6HCR016coMPbW7iySM'
+                },
+                function (data) {
+                    var nextPageToken = data.nextPageToken;
+                    var prevPageToken = data.prevPageToken;
+
+                    // Log Data
+                    
+
+                    $.each(data.items, function (i, item) {
+                        // Get Output****
+                        var output = getOutput(item);
+
+                        // Display Results*****
+                        $('#results').append(output);
+                    });
+
+                    var buttons = getButtons(prevPageToken, nextPageToken);
+
+                    // Display Buttons
+                    $('#buttons').append(buttons);
+                }
+            );
+        }
+
+        // Next Page Function
+        function nextPage() {
+            var token = $('#next-button').data('token');
+            var q = $('#next-button').data('query');
+
+            // Clear Results
+            $('#results').html('');
+            $('#buttons').html('');
+
+            // Get Form Input
+            q = $('#query').val();
+
+            // Run GET Request on API
+            $.get(
+                "https://www.googleapis.com/youtube/v3/search", {
+                    part: 'snippet, id',
+                    q: q,
+                    pageToken: token,
+                    type: 'video',
+                    key: 'AIzaSyBSYQygRrJHge7Kg6HCR016coMPbW7iySM'
+                },
+                function (data) {
+                    var nextPageToken = data.nextPageToken;
+                    var prevPageToken = data.prevPageToken;
+
+                    // Log Data
+ 
+
+                    $.each(data.items, function (i, item) {
+                        // Get Output
+
+                        var output = getOutput(item);
+
+                        // Display Results
+                        $('#results').append(output);
+                    });
+
+                    var buttons = getButtons(prevPageToken, nextPageToken);
+
+                    // Display Buttons
+                    $('#buttons').append(buttons);
+                }
+            );
+
+        }
+
+
+        // Prev Page Function
+        function prevPage() {
+            var token = $('#prev-button').data('token');
+            var q = $('#prev-button').data('query');
+
+            // Clear Results
+            $('#results').html('');
+            $('#buttons').html('');
+
+            // Get Form Input
+            q = $('#query').val();
+
+            // Run GET Request on API
+            $.get(
+                "https://www.googleapis.com/youtube/v3/search", {
+                    part: 'snippet, id',
+                    q: q,
+                    pageToken: token,
+                    type: 'video',
+                    key: 'AIzaSyBSYQygRrJHge7Kg6HCR016coMPbW7iySM'
+                },
+                function (data) {
+                    var nextPageToken = data.nextPageToken;
+                    var prevPageToken = data.prevPageToken;
+
+                    // Log Data
+ 
+
+                    $.each(data.items, function (i, item) {
+                        // Get Output
+                        var output = getOutput(item);
+
+                        // Display Results
+                        $('#results').append(output);
+                    });
+
+                    var buttons = getButtons(prevPageToken, nextPageToken);
+
+                    // Display Buttons
+                    $('#buttons').append(buttons);
+                }
+            );
+
+        }
+
+
+
+        // Build Output**********************************************
+        function getOutput(item) {
+            var videoId = item.id.videoId;
+            var title = item.snippet.title;
+            var description = item.snippet.description;
+            var thumb = item.snippet.thumbnails.high.url;
+            var channelTitle = item.snippet.channelTitle;
+            var videoDate = item.snippet.publishedAt;
+
+            // Build Output String**************************************
+            var output = '<li>' +
+                '<div class="list-left">' +
+                '<img src="' + thumb + '">' +
+                '</div>' +
+                '<div class="list-right" style="text-decoration: none">' +
+                '<h3 style="text-decoration: none"><a  style="text-decoration: none" class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/' + videoId + '">' + title +
+                '</a></h3>' +
+                '<small>By <span class="cTitle">' + channelTitle + '</span> on ' + videoDate + '</small>' +
+                '<p>' + description + '</p>' +
+                '</div>' +
+                '</li>' +
+                '<div class="clearfix"></div>' +
+                '';
+
+            return output;
+
+        }
+
+        // Build the buttons
+        function getButtons(prevPageToken, nextPageToken) {
+            if (!prevPageToken) {
+                var btnoutput = '<div class="button-container">' +
+                    '<button id="next-button" class="paging-button" data-token="' + nextPageToken + '" data-query="' +
+                    q + '"' +
+                    'onclick="nextPage();">Next Page</button></div>';
+            } else {
+                var btnoutput = '<div class="button-container">' +
+                    '<button id="prev-button" class="paging-button" data-token="' + prevPageToken + '" data-query="' +
+                    q + '"' +
+                    'onclick="prevPage();">Prev Page</button>' +
+                    '<button id="next-button" class="paging-button" data-token="' + nextPageToken + '" data-query="' +
+                    q + '"' +
+                    'onclick="nextPage();">Next Page</button></div>';
+            }
+
+            return btnoutput;
+        }
+		</script>
+	</body>
+</html>
